@@ -1,28 +1,26 @@
 let userScore = 0;
 let compScore = 0;
-let win=document.querySelector("#msg");
-let uscore=document.querySelector("#user-score");
-let cscore=document.querySelector("#comp-score");
+let win = document.querySelector("#msg");
+let uscore = document.querySelector("#user-score");
+let cscore = document.querySelector("#comp-score");
 const draw = () => {
   console.log("Game was draw");
-    win.innerText="Game is DRAW";
-    win.style.backgroundColor="orange";
+  win.innerText = "Game is DRAW";
+  win.style.backgroundColor = "orange";
 };
-const showWinner = (userWin, userChoice,compChoice) => {
+const showWinner = (userWin, userChoice, compChoice) => {
   if (userWin) {
-    
     console.log("User win");
-    win.innerText=`User ${userChoice} beats computer ${compChoice}`;
-    win.style.backgroundColor="Green";
+    win.innerText = `User ${userChoice} beats computer ${compChoice}`;
+    win.style.backgroundColor = "Green";
     userScore++;
-    uscore.innerText=`${userScore}`;
-
+    uscore.innerText = `${userScore}`;
   } else {
     console.log("user loose");
-    win.innerText=`User ${compScore} loose with computer ${compChoice}`;
-    win.style.backgroundColor="red";
+    win.innerText = `User ${userChoice} loose with computer ${compChoice}`;
+    win.style.backgroundColor = "red";
     compScore++;
-    cscore.innerText=`${compScore}`;
+    cscore.innerText = `${compScore}`;
   }
 };
 const playGame = (userChoice, compChoice) => {
@@ -40,7 +38,7 @@ const playGame = (userChoice, compChoice) => {
       userWin = compChoice === "rock" ? false : true;
     }
     console.log(userWin);
-    showWinner(userWin, userChoice,compChoice);
+    showWinner(userWin, userChoice, compChoice);
   }
 };
 
